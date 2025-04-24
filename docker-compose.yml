@@ -6,9 +6,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: kbpoovanna
-      POSTGRES_PASSWORD: kbpassword
-      POSTGRES_DB: task_manager_production
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db name
     ports:
       - "5432:5432"
 
@@ -21,7 +21,7 @@ services:
     env_file:
       - .env
     environment:
-      DATABASE_URL: postgres://kbpoovanna:kbpassword@db:5432/task_manager_production
+      DATABASE_URL: postgres://username:password@db:5432/task_manager_production
       RAILS_ENV: production
       RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
 
