@@ -7,31 +7,31 @@ default: &default
 
 development:
   <<: *default
-  database: 
+  database: task_manager_development
 
 test:
   <<: *default
-  database: 
+  database: task_manager_test
 
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: 
+  database: task_manager_production
 
 # For SolidCable
 cable:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: 
+  database: task_manager_cable
 
 # For SolidQueue
 queue:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: 
+  database: task_manager_queue
 
 # For SolidCache
 cache:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: 
+  database: task_manager_cache
