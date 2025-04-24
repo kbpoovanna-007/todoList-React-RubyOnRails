@@ -1,37 +1,37 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  username: kbpoovanna
-  password: kbpassword
+  username: 
+  password: 
   pool: 5
 
 development:
   <<: *default
-  database: task_manager_development
+  database: 
 
 test:
   <<: *default
-  database: task_manager_test
+  database: 
 
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: task_manager_production
+  database: 
 
 # For SolidCable
 cable:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: task_manager_cable
+  database: 
 
 # For SolidQueue
 queue:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: task_manager_queue
+  database: 
 
 # For SolidCache
 cache:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: task_manager_cache
+  database: 
