@@ -9,18 +9,16 @@ function Landing() {
   const [error, setError] = useState('');
   const [editingTask, setEditingTask] = useState(null);
   const navigate = useNavigate();
-  
-  // Define isMounted ref
+
   const isMounted = useRef(true);
   
   const user = JSON.parse(localStorage.getItem('user') || '{}');
 
-  // Set up cleanup when component unmounts
   useEffect(() => {
-    // Component is mounted
+  
     isMounted.current = true;
     
-    // Cleanup function when component unmounts
+
     return () => {
       isMounted.current = false;
     };
