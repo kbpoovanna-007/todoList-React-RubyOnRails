@@ -1,4 +1,3 @@
-# app/controllers/tasks_controller.rb
 class TasksController < ApplicationController
     before_action :set_task, only: [:show, :update, :destroy]
   
@@ -41,6 +40,7 @@ class TasksController < ApplicationController
   
     private
   
+    
     def set_task
       @task = @current_user.tasks.find(params[:id])
     rescue ActiveRecord::RecordNotFound

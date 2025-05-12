@@ -1,4 +1,3 @@
-// Create a new file: src/context/AuthContext.js
 import React, { createContext, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,7 +12,6 @@ export const AuthProvider = ({ children }) => {
   );
   const [loading, setLoading] = useState(false);
   
-  // Method to handle login
   const login = (token, userData) => {
     localStorage.setItem('isAuthenticated', 'true');
     localStorage.setItem('token', token);
@@ -22,7 +20,6 @@ export const AuthProvider = ({ children }) => {
     setUser(userData);
   };
   
-  // Method to handle logout
   const logout = () => {
     localStorage.removeItem('isAuthenticated');
     localStorage.removeItem('token');
@@ -31,7 +28,6 @@ export const AuthProvider = ({ children }) => {
     setUser({});
   };
   
-  // Context value
   const value = {
     isAuthenticated,
     user,
@@ -48,5 +44,4 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-// Custom hook for using the auth context
 export const useAuth = () => useContext(AuthContext);

@@ -6,18 +6,15 @@ import Landing from './components/Landing';
 import './App.css';
 
 function App() {
-  // Use state instead of direct localStorage access for reactivity
   const [isAuthenticated, setIsAuthenticated] = useState(
     localStorage.getItem('isAuthenticated') === 'true'
   );
   
-  // Listen for changes in authentication status
   useEffect(() => {
     const checkAuth = () => {
       setIsAuthenticated(localStorage.getItem('isAuthenticated') === 'true');
     };
     
-    // Check auth status when storage changes
     window.addEventListener('storage', checkAuth);
     return () => {
       window.removeEventListener('storage', checkAuth);

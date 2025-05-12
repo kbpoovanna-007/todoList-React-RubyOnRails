@@ -1,4 +1,3 @@
-# app/controllers/auth_controller.rb
 class AuthController < ApplicationController
     skip_before_action :authenticate_user, only: [:login, :signup]
   
